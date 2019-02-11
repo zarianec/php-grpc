@@ -42,7 +42,7 @@ func Generate(req *plugin.CodeGeneratorRequest) *plugin.CodeGeneratorResponse {
 
 func generate(file *descriptor.FileDescriptorProto, service *descriptor.ServiceDescriptorProto) *plugin.CodeGeneratorResponse_File {
 	return &plugin.CodeGeneratorResponse_File{
-		Name:    str(filename(file.Package, service.Name)),
+		Name:    str(filename(file, service.Name)),
 		Content: str(body(file, service)),
 	}
 }
